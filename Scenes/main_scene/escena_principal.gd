@@ -1,13 +1,18 @@
 extends Node2D
 
 @export var nivels: Array[PackedScene]
+@export var controller_game: ControllerGame
 
 var _current_level: int = 1
 var _current_level_instance: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_create_level(_current_level)
+	if GlobalController.level > 1:
+		_load_level()
+	else:
+		_create_level(_current_level)
+
 
 func _create_level(level: int) -> void:
 	_current_level_instance = nivels[level - 1].instantiate()
@@ -18,6 +23,9 @@ func _create_level(level: int) -> void:
 		if children[i].is_in_group("characters"):
 			children[i].character_dead.connect(_reload_level)
 			break
+	
+	GlobalController.level = level
+	controller_game._save_game_data()
 
 func _destroy_level() -> void:
 	_current_level_instance.queue_free()
@@ -29,4 +37,8 @@ func _reload_level() -> void:
 func next_level():
 	_current_level += 1
 	_destroy_level()
+	_create_level.call_deferred(_current_level)
+
+func _load_level():
+	_current_level = GlobalController.level
 	_create_level.call_deferred(_current_level)

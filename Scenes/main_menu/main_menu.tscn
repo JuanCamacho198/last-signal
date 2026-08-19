@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3sgn88yx3bmc"]
 
 [ext_resource type="Theme" uid="uid://be6osrajveiqn" path="res://Scenes/Themes/buttoms_main_menu.tres" id="1_ep757"]
+[ext_resource type="PackedScene" uid="uid://niaadi6msc1b" path="res://Scenes/controller_game/controller_game.tscn" id="1_oibpd"]
 [ext_resource type="StyleBox" uid="uid://c24kvgax2scg" path="res://StyleButtoms/normal.tres" id="2_kjrrv"]
 [ext_resource type="StyleBox" uid="uid://ihhbyjtx73c8" path="res://StyleButtoms/pressed.tres" id="3_n2kgy"]
 [ext_resource type="StyleBox" uid="uid://ibwk43820b2o" path="res://StyleButtoms/hover.tres" id="4_24s6s"]
@@ -8,6 +9,7 @@
 [ext_resource type="Script" uid="uid://britmru81xqho" path="res://Scenes/main_menu/btn_jugar.gd" id="6_24s6s"]
 [ext_resource type="PackedScene" uid="uid://c38mfhtbqkq2c" path="res://Scenes/main_scene/escena_principal.tscn" id="7_kn0ll"]
 [ext_resource type="Script" uid="uid://wotmorl2iwtj" path="res://Scenes/main_menu/_salir.gd" id="8_oibpd"]
+[ext_resource type="Script" uid="uid://1xakifx3ha8v" path="res://Scenes/main_menu/btn_cargar.gd" id="9_k3jx5"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8jyv1"]
 particle_flag_disable_z = true
@@ -25,6 +27,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ControllerGame" parent="." unique_id=2006441971 instance=ExtResource("1_oibpd")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=347654280]
 layout_mode = 1
@@ -52,7 +56,7 @@ text = "Jugar"
 script = ExtResource("6_24s6s")
 main_scene = ExtResource("7_kn0ll")
 
-[node name="cargar" type="Button" parent="VBoxContainer" unique_id=1349354018]
+[node name="cargar" type="Button" parent="VBoxContainer" unique_id=1349354018 node_paths=PackedStringArray("controller_game", "btn_jugar")]
 layout_mode = 2
 theme = ExtResource("1_ep757")
 theme_override_styles/normal = ExtResource("2_kjrrv")
@@ -60,6 +64,9 @@ theme_override_styles/pressed = ExtResource("3_n2kgy")
 theme_override_styles/hover = ExtResource("4_24s6s")
 theme_override_styles/focus = ExtResource("5_kn0ll")
 text = "Cargar"
+script = ExtResource("9_k3jx5")
+controller_game = NodePath("../../ControllerGame")
+btn_jugar = NodePath("../jugar")
 
 [node name="salir" type="Button" parent="VBoxContainer" unique_id=1882837540]
 layout_mode = 2
