@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j0qjn")
-label = NodePath("ColorRect/HBoxContainer/Title")
+label = NodePath("ColorRect/HBoxContainer/Value")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=10753853]
 layout_mode = 0
@@ -40,4 +40,5 @@ text = "MUERTES:"
 
 [node name="Value" type="Label" parent="ColorRect/HBoxContainer" unique_id=1788811571]
 layout_mode = 2
+theme = ExtResource("2_rjwnd")
 text = "0"
