@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://d1adekilxcai1" path="res://Addons/music/music.wav" id="6_w0fne"]
 [ext_resource type="PackedScene" uid="uid://cgmg2fv7hoj3y" path="res://Scenes/Interface/deaths_counter.tscn" id="7_u50wa"]
 [ext_resource type="PackedScene" uid="uid://niaadi6msc1b" path="res://Scenes/controller_game/controller_game.tscn" id="8_f3jbf"]
+[ext_resource type="Script" uid="uid://bgmqyf3d0cnro" path="res://Scenes/main_scene/controller_pause.gd" id="9_cnaaq"]
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1172703894 node_paths=PackedStringArray("controller_game")]
 script = ExtResource("1_nbk1h")
@@ -30,3 +31,7 @@ bus = &"Music"
 [node name="DeathsCounter" parent="CanvasLayer" unique_id=352180415 instance=ExtResource("7_u50wa")]
 
 [node name="ControllerGame" parent="." unique_id=2006441971 instance=ExtResource("8_f3jbf")]
+
+[node name="ControllerPause" type="Node" parent="." unique_id=694297859]
+process_mode = 3
+script = ExtResource("9_cnaaq")
