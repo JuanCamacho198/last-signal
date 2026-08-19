@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgmg2fv7hoj3y" path="res://Scenes/Interface/deaths_counter.tscn" id="7_u50wa"]
 [ext_resource type="PackedScene" uid="uid://niaadi6msc1b" path="res://Scenes/controller_game/controller_game.tscn" id="8_f3jbf"]
 [ext_resource type="Script" uid="uid://bgmqyf3d0cnro" path="res://Scenes/main_scene/controller_pause.gd" id="9_cnaaq"]
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu/pause_menu.tscn" id="10_pmenu"]
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1172703894 node_paths=PackedStringArray("controller_game")]
 script = ExtResource("1_nbk1h")
@@ -30,8 +31,11 @@ bus = &"Music"
 
 [node name="DeathsCounter" parent="CanvasLayer" unique_id=352180415 instance=ExtResource("7_u50wa")]
 
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_pmenu")]
+
 [node name="ControllerGame" parent="." unique_id=2006441971 instance=ExtResource("8_f3jbf")]
 
-[node name="ControllerPause" type="Node" parent="." unique_id=694297859]
+[node name="ControllerPause" type="Node" parent="." unique_id=694297859 node_paths=PackedStringArray("pause_menu")]
 process_mode = 3
 script = ExtResource("9_cnaaq")
+pause_menu = NodePath("CanvasLayer/PauseMenu")

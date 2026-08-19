@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://s1iwq46y2xzoe"]
+
+[ext_resource type="Script" path="res://Scenes/pause_menu/pause_menu.gd" id="1_pmenu"]
+[ext_resource type="Theme" uid="uid://be6osrajveiqn" path="res://Scenes/Themes/buttoms_main_menu.tres" id="2_pmenu"]
+[ext_resource type="StyleBox" uid="uid://c24kvgax2scg" path="res://StyleButtoms/normal.tres" id="3_pmenu"]
+[ext_resource type="StyleBox" uid="uid://ihhbyjtx73c8" path="res://StyleButtoms/pressed.tres" id="4_pmenu"]
+[ext_resource type="StyleBox" uid="uid://ibwk43820b2o" path="res://StyleButtoms/hover.tres" id="5_pmenu"]
+[ext_resource type="StyleBox" uid="uid://dbyjh4epi4i0q" path="res://StyleButtoms/focus.tres" id="6_pmenu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.035294, 0.054902, 0.101961, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.180392, 0.290196, 0.431373, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("continuar_button", "reiniciar_button", "menu_principal_button", "escena_principal")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+process_mode = 3
+mouse_filter = 0
+visible = false
+script = ExtResource("1_pmenu")
+continuar_button = NodePath("PanelContainer/VBoxContainer/Continuar")
+reiniciar_button = NodePath("PanelContainer/VBoxContainer/ReiniciarNivel")
+menu_principal_button = NodePath("PanelContainer/VBoxContainer/MenuPrincipal")
+escena_principal = NodePath("../..")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Titulo" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.788235, 0.839216, 0.890196, 1)
+theme_override_font_sizes/font_size = 64
+text = "PAUSA"
+horizontal_alignment = 1
+
+[node name="Continuar" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pmenu")
+theme_override_styles/normal = ExtResource("3_pmenu")
+theme_override_styles/pressed = ExtResource("4_pmenu")
+theme_override_styles/hover = ExtResource("5_pmenu")
+theme_override_styles/focus = ExtResource("6_pmenu")
+text = "Continuar"
+
+[node name="ReiniciarNivel" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pmenu")
+theme_override_styles/normal = ExtResource("3_pmenu")
+theme_override_styles/pressed = ExtResource("4_pmenu")
+theme_override_styles/hover = ExtResource("5_pmenu")
+theme_override_styles/focus = ExtResource("6_pmenu")
+text = "Reiniciar nivel"
+
+[node name="MenuPrincipal" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pmenu")
+theme_override_styles/normal = ExtResource("3_pmenu")
+theme_override_styles/pressed = ExtResource("4_pmenu")
+theme_override_styles/hover = ExtResource("5_pmenu")
+theme_override_styles/focus = ExtResource("6_pmenu")
+text = "Menú principal"
