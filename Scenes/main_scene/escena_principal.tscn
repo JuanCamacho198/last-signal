@@ -7,10 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dvx2hbtohb8io" path="res://Scenes/background/parallax_2d.tscn" id="3_nbk1h"]
 [ext_resource type="AudioStream" uid="uid://d1adekilxcai1" path="res://Addons/music/music.wav" id="6_w0fne"]
 [ext_resource type="PackedScene" uid="uid://cgmg2fv7hoj3y" path="res://Scenes/Interface/deaths_counter.tscn" id="7_u50wa"]
+[ext_resource type="PackedScene" uid="uid://niaadi6msc1b" path="res://Scenes/controller_game/controller_game.tscn" id="8_f3jbf"]
 
-[node name="EscenaPrincipal" type="Node2D" unique_id=1172703894]
+[node name="EscenaPrincipal" type="Node2D" unique_id=1172703894 node_paths=PackedStringArray("controller_game")]
 script = ExtResource("1_nbk1h")
 nivels = Array[PackedScene]([ExtResource("1_nxo4g"), ExtResource("3_04s25"), ExtResource("2_eifew")])
+controller_game = NodePath("ControllerGame")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2095444177]
 zoom = Vector2(2.58, 2.58)
@@ -26,3 +28,5 @@ bus = &"Music"
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=115630512]
 
 [node name="DeathsCounter" parent="CanvasLayer" unique_id=352180415 instance=ExtResource("7_u50wa")]
+
+[node name="ControllerGame" parent="." unique_id=2006441971 instance=ExtResource("8_f3jbf")]
