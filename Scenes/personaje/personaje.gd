@@ -53,3 +53,4 @@ func _on_area_2d_body_entered(_body: Node) -> void:
 	await get_tree().create_timer(0.5).timeout
 	character_dead.emit()
 	
+	GlobalController._plus_death_count()

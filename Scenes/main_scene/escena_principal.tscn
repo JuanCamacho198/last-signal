@@ -16,6 +16,7 @@ nivels = Array[PackedScene]([ExtResource("1_nxo4g"), ExtResource("3_04s25"), Ext
 zoom = Vector2(2.58, 2.58)
 
 [node name="Parallax2D" parent="." unique_id=712274906 instance=ExtResource("3_nbk1h")]
+z_index = -3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1654596349]
 stream = ExtResource("6_w0fne")
