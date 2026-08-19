@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c38mfhtbqkq2c" path="res://Scenes/main_scene/escena_principal.tscn" id="7_kn0ll"]
 [ext_resource type="Script" uid="uid://wotmorl2iwtj" path="res://Scenes/main_menu/_salir.gd" id="8_oibpd"]
 [ext_resource type="Script" uid="uid://1xakifx3ha8v" path="res://Scenes/main_menu/btn_cargar.gd" id="9_k3jx5"]
+[ext_resource type="Texture2D" uid="uid://nrl6u7qi2asq" path="res://Assets/background/fondo-menu-principal.png" id="11_k3jx5"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8jyv1"]
 particle_flag_disable_z = true
@@ -32,18 +33,16 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=347654280]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 0.115
+anchor_top = 0.33600003
+anchor_right = 0.27600002
+anchor_bottom = 1.0
+offset_top = -0.20799255
+offset_right = 0.54397583
+grow_vertical = 0
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="jugar" type="Button" parent="VBoxContainer" unique_id=1780135998]
 layout_mode = 2
@@ -92,6 +91,17 @@ mouse_filter = 2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=76032228]
 amount = 472
-lifetime = 20.970000000000002
+lifetime = 20.97
 preprocess = 20.0
 process_material = SubResource("ParticleProcessMaterial_8jyv1")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1020189873]
+z_index = -1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -31.0
+offset_right = 1166.5
+offset_bottom = 693.0
+mouse_filter = 2
+texture = ExtResource("11_k3jx5")
+expand_mode = 1
