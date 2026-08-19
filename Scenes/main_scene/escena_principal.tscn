@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c38mfhtbqkq2c"]
+
+[ext_resource type="Script" uid="uid://4r87hd4oy1d0" path="res://Scenes/main_scene/escena_principal.gd" id="1_nbk1h"]
+[ext_resource type="PackedScene" uid="uid://bjyuuufoj3siq" path="res://Scenes/nivel_1/nivel_1.tscn" id="1_nxo4g"]
+[ext_resource type="PackedScene" uid="uid://0pw5vrd8obmd" path="res://Scenes/FinalLevel/final_scene.tscn" id="2_eifew"]
+[ext_resource type="PackedScene" uid="uid://cokvh2h6amrq4" path="res://Scenes/nivel_2/nivel_2.tscn" id="3_04s25"]
+[ext_resource type="PackedScene" uid="uid://dvx2hbtohb8io" path="res://Scenes/background/parallax_2d.tscn" id="3_nbk1h"]
+[ext_resource type="AudioStream" uid="uid://d1adekilxcai1" path="res://Addons/music/music.wav" id="6_w0fne"]
+[ext_resource type="PackedScene" uid="uid://cgmg2fv7hoj3y" path="res://Scenes/Interface/deaths_counter.tscn" id="7_u50wa"]
+
+[node name="EscenaPrincipal" type="Node2D" unique_id=1172703894]
+script = ExtResource("1_nbk1h")
+nivels = Array[PackedScene]([ExtResource("1_nxo4g"), ExtResource("3_04s25"), ExtResource("2_eifew")])
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2095444177]
+zoom = Vector2(2.58, 2.58)
+
+[node name="Parallax2D" parent="." unique_id=712274906 instance=ExtResource("3_nbk1h")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1654596349]
+stream = ExtResource("6_w0fne")
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=115630512]
+
+[node name="DeathsCounter" parent="CanvasLayer" unique_id=352180415 instance=ExtResource("7_u50wa")]

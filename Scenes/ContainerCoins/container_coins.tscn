@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b2l1qewlv50s8"]
+
+[ext_resource type="Script" uid="uid://brxb45veajkat" path="res://Scenes/ContainerCoins/container_coins.gd" id="1_k0spk"]
+
+[node name="ContainerCoins" type="Node" unique_id=1002267955]
+script = ExtResource("1_k0spk")

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://p3im81ngvy73"]
+
+[ext_resource type="Script" uid="uid://bkg5aooan7bh8" path="res://Scenes/traps/tramp.gd" id="1_tl6pf"]
+[ext_resource type="Texture2D" uid="uid://dckp6f26g4mfr" path="res://Assets/sprites/industrial_spritesheet_lv1.png" id="2_qvfak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jyv1"]
+atlas = ExtResource("2_qvfak")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jyv1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttwmp"]
+size = Vector2(16, 4)
+
+[node name="Trap" type="RigidBody2D" unique_id=569464287 node_paths=PackedStringArray("raycast")]
+collision_mask = 5
+lock_rotation = true
+freeze = true
+script = ExtResource("1_tl6pf")
+raycast = NodePath("RayCast2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=377745127]
+texture = SubResource("AtlasTexture_8jyv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=454122625]
+shape = SubResource("RectangleShape2D_8jyv1")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1666299037]
+target_position = Vector2(0, 250)
+collision_mask = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=786870568]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=279386213]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_ttwmp")

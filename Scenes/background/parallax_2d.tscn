@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dvx2hbtohb8io"]
+
+[ext_resource type="Texture2D" uid="uid://cpk3w1qydtu03" path="res://Assets/background/fondonivel1.png" id="1_ctjlx"]
+
+[node name="Background_type_1" type="Parallax2D" unique_id=712274906]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=520772715]
+position = Vector2(-7.1525574e-07, 1.000001)
+scale = Vector2(0.29898652, 0.2989865)
+texture = ExtResource("1_ctjlx")

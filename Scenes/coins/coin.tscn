@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://de263i6mpe1dr"]
+
+[ext_resource type="Script" uid="uid://bfsl47fgkv7ck" path="res://Scenes/coins/coin.gd" id="1_67r63"]
+[ext_resource type="Texture2D" uid="uid://dckp6f26g4mfr" path="res://Assets/sprites/industrial_spritesheet_lv1.png" id="2_hv8n1"]
+[ext_resource type="AudioStream" uid="uid://c31k8lrprp1m7" path="res://Addons/sounds/coin_sound.wav" id="3_hv8n1"]
+[ext_resource type="Script" uid="uid://bd04ub3mmml1u" path="res://Scenes/coins/sound_coin.gd" id="4_tcsuh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttwmp"]
+atlas = ExtResource("2_hv8n1")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jyv1"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_67r63"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hv8n1"]
+resource_name = "rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcsuh"]
+_data = {
+&"RESET": SubResource("Animation_67r63"),
+&"rotate": SubResource("Animation_hv8n1")
+}
+
+[node name="Coin" type="Node2D" unique_id=1781540798 node_paths=PackedStringArray("area_2d", "coin_sound")]
+script = ExtResource("1_67r63")
+area_2d = NodePath("Area2D")
+coin_sound = NodePath("Sprite2D/SoundCoin")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1529264941]
+texture = SubResource("AtlasTexture_ttwmp")
+
+[node name="SoundCoin" type="AudioStreamPlayer2D" parent="Sprite2D" unique_id=393781044]
+stream = ExtResource("3_hv8n1")
+bus = &"SFX"
+script = ExtResource("4_tcsuh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1385769343]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2043588289]
+shape = SubResource("CircleShape2D_8jyv1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=731349180]
+libraries/ = SubResource("AnimationLibrary_tcsuh")
+autoplay = &"rotate"

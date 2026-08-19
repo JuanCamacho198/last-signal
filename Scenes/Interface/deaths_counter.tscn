@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cgmg2fv7hoj3y"]
+
+[ext_resource type="Script" uid="uid://dacnaux4t4bkc" path="res://Scenes/Interface/deaths_counter.gd" id="1_j0qjn"]
+
+[node name="DeathsCounter" type="Control" unique_id=352180415]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0qjn")
+
+[node name="Label" type="Label" parent="." unique_id=20224255]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "MUERTES: 0"
