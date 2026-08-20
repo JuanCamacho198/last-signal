@@ -3,6 +3,7 @@ extends Node2D
 @export var area_2d: Area2D
 @export var points: int = 50
 @export var coin_sound: AudioStreamPlayer2D
+@export var boost_duration: float = 7.0
 
 var _collected: bool = false
 
@@ -20,6 +21,12 @@ func _picked(_body) -> void:
 	# 	return
 	_collected = true
 	GlobalController.add_score(points)
+	if _body.has_method("apply_energy_boost"):
+		_body.apply_energy_boost(boost_duration)
+	else:
+		var player = get_tree().get_first_node_in_group("characters")
+		if player and player.has_method("apply_energy_boost"):
+			player.apply_energy_boost(boost_duration)
 	if coin_sound:
 		coin_sound.reparent(get_parent())
 		coin_sound.play()
