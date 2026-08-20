@@ -1,6 +1,7 @@
 extends Control
 
 @onready var _muertes_label: Label = $UILayer/CenterContainer/VBoxContainer/StatsPanel/VBox/MuertesLabel
+@onready var _puntos_label: Label = $UILayer/CenterContainer/VBoxContainer/StatsPanel/VBox/PuntosLabel
 @onready var _menu_button: Button = $UILayer/CenterContainer/VBoxContainer/MenuButton
 
 
@@ -14,13 +15,17 @@ func _ready() -> void:
 
 func _populate_stats() -> void:
 	var deaths: int = 0
+	var score: int = 0
 	var gc = get_node_or_null("/root/GlobalController")
 	if gc == null and get_tree() and get_tree().root and get_tree().root.has_node("GlobalController"):
 		gc = get_tree().root.get_node("GlobalController")
 	if gc:
 		deaths = gc.death_count
+		score = gc.score
 	if _muertes_label:
 		_muertes_label.text = "Muertes: %d" % deaths
+	if _puntos_label:
+		_puntos_label.text = "Puntos totales: %d" % score
 
 
 func _on_menu_pressed() -> void:

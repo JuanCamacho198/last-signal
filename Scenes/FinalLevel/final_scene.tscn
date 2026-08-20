@@ -83,7 +83,7 @@ horizontal_alignment = 1
 
 [node name="StatsPanel" type="PanelContainer" parent="UILayer/CenterContainer/VBoxContainer" unique_id=9000005]
 texture_filter = 2
-custom_minimum_size = Vector2(360, 80)
+custom_minimum_size = Vector2(360, 110)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_stats")
 
@@ -98,6 +98,13 @@ texture_filter = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Muertes: 0"
+horizontal_alignment = 1
+
+[node name="PuntosLabel" type="Label" parent="UILayer/CenterContainer/VBoxContainer/StatsPanel/VBox" unique_id=9000009]
+texture_filter = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Puntos totales: 0"
 horizontal_alignment = 1
 
 [node name="CreditsLabel" type="Label" parent="UILayer/CenterContainer/VBoxContainer" unique_id=9000010]

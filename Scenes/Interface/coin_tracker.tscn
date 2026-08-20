@@ -4,18 +4,20 @@
 [ext_resource type="Theme" uid="uid://cyt0u5jbdj074" path="res://Scenes/Themes/game_interface.tres" id="2_rjwnd"]
 
 [node name="CoinTracker" type="Control" unique_id=482419138 node_paths=PackedStringArray("label")]
+texture_filter = 2
 layout_mode = 3
 anchors_preset = 0
 offset_left = 15.0
 offset_top = 15.0
-offset_right = 175.0
+offset_right = 205.0
 offset_bottom = 57.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("1_j0qjn")
-label = NodePath("ColorRect/HBoxContainer/Label")
+label = NodePath("ColorRect/HBoxContainer/CoinsLabel")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=10753854]
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,22 +27,55 @@ grow_vertical = 2
 color = Color(0.78179586, 0.54253864, 0, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=472207273]
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.0
+offset_left = -85.0
 offset_top = -13.0
-offset_right = 67.0
+offset_right = 85.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+theme_override_constants/separation = 6
 
-[node name="Label" type="Label" parent="ColorRect/HBoxContainer" unique_id=1788811572]
+[node name="CoinsLabel" type="Label" parent="ColorRect/HBoxContainer" unique_id=1788811572]
+texture_filter = 2
 layout_mode = 2
 theme = ExtResource("2_rjwnd")
-text = "Monedas 0/0"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+text = "0/0"
+horizontal_alignment = 1
+
+[node name="SepLabel" type="Label" parent="ColorRect/HBoxContainer" unique_id=1788811573]
+texture_filter = 2
+layout_mode = 2
+theme = ExtResource("2_rjwnd")
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+text = "●"
+horizontal_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="ColorRect/HBoxContainer" unique_id=1788811574]
+texture_filter = 2
+layout_mode = 2
+theme = ExtResource("2_rjwnd")
+theme_override_colors/font_color = Color(1, 0.835294, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 22
+text = "0 pts"
 horizontal_alignment = 1
