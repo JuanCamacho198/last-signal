@@ -34,4 +34,8 @@ func _on_menu_pressed() -> void:
 		gc2 = get_tree().root.get_node("GlobalController")
 	if gc2:
 		gc2.level = 1
+		if gc2.has_method("reset_score"):
+			gc2.reset_score()
+		if gc2.has_method("reset_coins"):
+			gc2.reset_coins()
 	get_tree().change_scene_to_file("res://Scenes/main_menu/main_menu.tscn")

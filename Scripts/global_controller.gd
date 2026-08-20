@@ -21,7 +21,7 @@ func reset_coins() -> void:
 	coins_collected = 0
 	coins_total_changed.emit(0)
 	coins_collected_changed.emit(0, 0)
-	reset_score()
+	# score persists across levels - do NOT reset here (final needs it)
 
 func reset_score() -> void:
 	score = 0
