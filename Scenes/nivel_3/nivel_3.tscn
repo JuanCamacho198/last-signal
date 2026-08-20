@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2l1qewlv50s8" path="res://Scenes/ContainerCoins/container_coins.tscn" id="5_jbj6f"]
 [ext_resource type="PackedScene" uid="uid://de263i6mpe1dr" path="res://Scenes/coins/coin.tscn" id="6_vcoj0"]
 [ext_resource type="PackedScene" uid="uid://uy2nchjmxssc" path="res://Scenes/Enemys/saw.tscn" id="7_jbj6f"]
+[ext_resource type="PackedScene" uid="uid://ddos7k2lwigrq" path="res://Scenes/energy/energy.tscn" id="8_vcoj0"]
 
 [node name="Nivel3" type="Node2D" unique_id=440444537]
 
@@ -44,3 +45,6 @@ position = Vector2(179, -82)
 [node name="Saw" parent="." unique_id=1670142628 instance=ExtResource("7_jbj6f")]
 position = Vector2(-45, 51)
 move_direction = Vector2(0, 50)
+
+[node name="Energy" parent="." unique_id=1520034141 instance=ExtResource("8_vcoj0")]
+position = Vector2(-192, 2)

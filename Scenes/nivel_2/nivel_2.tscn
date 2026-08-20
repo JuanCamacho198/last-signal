@@ -3,12 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://dvx2hbtohb8io" path="res://Scenes/background/parallax_2d.tscn" id="1_ccjap"]
 [ext_resource type="PackedScene" uid="uid://p3im81ngvy73" path="res://Scenes/traps/tramp.tscn" id="1_hkhga"]
 [ext_resource type="PackedScene" uid="uid://dgdgd0t8cv6lb" path="res://Scenes/bordes/bordes.tscn" id="1_tcmrg"]
+[ext_resource type="PackedScene" uid="uid://ddos7k2lwigrq" path="res://Scenes/energy/energy.tscn" id="1_u84c6"]
 [ext_resource type="PackedScene" uid="uid://dx4qfvw5clnh5" path="res://Scenes/personaje/personaje.tscn" id="2_ccjap"]
 [ext_resource type="PackedScene" uid="uid://b2l1qewlv50s8" path="res://Scenes/ContainerCoins/container_coins.tscn" id="3_85k2d"]
 [ext_resource type="PackedScene" uid="uid://de263i6mpe1dr" path="res://Scenes/coins/coin.tscn" id="4_85k2d"]
 [ext_resource type="TileSet" uid="uid://clbjf1iiphlue" path="res://Tilesets/industrial.tres" id="4_hkhga"]
+[ext_resource type="PackedScene" uid="uid://uy2nchjmxssc" path="res://Scenes/Enemys/saw.tscn" id="9_7qmjg"]
 
 [node name="Nivel2" type="Node2D" unique_id=70953558]
+
+[node name="Energy" parent="." unique_id=1520034141 instance=ExtResource("1_u84c6")]
+position = Vector2(-195, -15)
 
 [node name="Trap" parent="." unique_id=81496469 instance=ExtResource("1_hkhga")]
 position = Vector2(137, -104)
@@ -42,3 +47,7 @@ tile_set = ExtResource("4_hkhga")
 visible = false
 z_index = -2
 scroll_offset = Vector2(4, -11)
+
+[node name="Saw" parent="." unique_id=1670142628 instance=ExtResource("9_7qmjg")]
+position = Vector2(57, -52)
+move_direction = Vector2(0, 50)
