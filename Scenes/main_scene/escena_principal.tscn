@@ -34,6 +34,7 @@ bus = &"Music"
 [node name="CoinTracker" parent="CanvasLayer" unique_id=352180415 instance=ExtResource("7_u50wa")]
 
 [node name="LevelBanner" type="Control" parent="CanvasLayer" unique_id=977342111]
+texture_filter = 2
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,6 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/LevelBanner" unique_id=977342112]
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
