@@ -36,7 +36,7 @@ tile_set = ExtResource("3_6xo1s")
 position = Vector2(193, 88)
 
 [node name="Coin2" parent="ContainerCoins" unique_id=1633494548 instance=ExtResource("6_vcoj0")]
-position = Vector2(-29, -49)
+position = Vector2(-152, -52)
 
 [node name="Coin3" parent="ContainerCoins" unique_id=1637372795 instance=ExtResource("6_vcoj0")]
 position = Vector2(179, -82)
