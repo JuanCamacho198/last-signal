@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cokvh2h6amrq4" path="res://Scenes/nivel_2/nivel_2.tscn" id="3_04s25"]
 [ext_resource type="PackedScene" uid="uid://dvx2hbtohb8io" path="res://Scenes/background/parallax_2d.tscn" id="3_nbk1h"]
 [ext_resource type="PackedScene" uid="uid://dgcy4lnnqrojp" path="res://Scenes/nivel_3/nivel_3.tscn" id="4_nvawf"]
-[ext_resource type="AudioStream" uid="uid://d1adekilxcai1" path="res://Addons/music/music.wav" id="6_w0fne"]
+[ext_resource type="AudioStream" uid="uid://jijs6u2jwl16" path="res://Addons/music/Pixel Void.wav" id="7_nvawf"]
 [ext_resource type="PackedScene" uid="uid://eogu5mur658o" path="res://Scenes/Interface/coin_tracker.tscn" id="7_u50wa"]
 [ext_resource type="PackedScene" uid="uid://niaadi6msc1b" path="res://Scenes/controller_game/controller_game.tscn" id="8_f3jbf"]
 [ext_resource type="Script" uid="uid://bgmqyf3d0cnro" path="res://Scenes/main_scene/controller_pause.gd" id="9_cnaaq"]
@@ -25,7 +25,7 @@ zoom = Vector2(2.58, 2.58)
 z_index = -3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1654596349]
-stream = ExtResource("6_w0fne")
+stream = ExtResource("7_nvawf")
 autoplay = true
 bus = &"Music"
 
