@@ -1,22 +1,28 @@
 extends Node2D
 
 @export var area_2d: Area2D
+@export var points: int = 50
 @export var coin_sound: AudioStreamPlayer2D
 
-var container_coins: ContainerCoins
+var _collected: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	area_2d.body_entered.connect(_picked)
+	if area_2d:
+		area_2d.body_entered.connect(_picked)
 	_init_animation()
 
 func _picked(_body) -> void:
-	if container_coins == null:
+	if _collected:
 		return
-	container_coins.collect_coin()
-	GlobalController.add_score(10)
-	coin_sound.reparent(get_parent())
-	coin_sound.play()
+	# Accept any body; optionally filter by player group/layer.
+	# If you want strict player-only, uncomment next two lines:
+	# if not (_body.is_in_group("characters") or _body.is_in_group("player") or _body.name == "Personaje"):
+	# 	return
+	_collected = true
+	GlobalController.add_score(points)
+	if coin_sound:
+		coin_sound.reparent(get_parent())
+		coin_sound.play()
 	queue_free()
 
 func _init_animation():

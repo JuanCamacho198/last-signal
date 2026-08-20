@@ -3,11 +3,13 @@ extends Node
 signal death_count_changed(new_count: int)
 signal coins_total_changed(total: int)
 signal coins_collected_changed(collected: int, total: int)
+signal score_changed(new_score: int)
 
 var death_count: int
 var level: int
 var coins_total: int = 0
 var coins_collected: int = 0
+var score: int = 0
 
 
 func _plus_death_count() -> void:
@@ -19,6 +21,15 @@ func reset_coins() -> void:
 	coins_collected = 0
 	coins_total_changed.emit(0)
 	coins_collected_changed.emit(0, 0)
+	reset_score()
+
+func reset_score() -> void:
+	score = 0
+	score_changed.emit(score)
+
+func add_score(p: int) -> void:
+	score += p
+	score_changed.emit(score)
 
 func set_coins_total(t: int) -> void:
 	coins_total = t
