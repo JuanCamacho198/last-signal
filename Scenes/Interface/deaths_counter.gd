@@ -1,4 +1,7 @@
 extends Control
+# Deprecated: replaced by coin_tracker.gd (Monedas X/Y HUD).
+# Kept for rollback; not instantiated in escena_principal.tscn.
+# GlobalController.death_count remains but is no longer displayed.
 
 @export var label: Label
 

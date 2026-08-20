@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cokvh2h6amrq4" path="res://Scenes/nivel_2/nivel_2.tscn" id="3_04s25"]
 [ext_resource type="PackedScene" uid="uid://dvx2hbtohb8io" path="res://Scenes/background/parallax_2d.tscn" id="3_nbk1h"]
 [ext_resource type="AudioStream" uid="uid://d1adekilxcai1" path="res://Addons/music/music.wav" id="6_w0fne"]
-[ext_resource type="PackedScene" uid="uid://cgmg2fv7hoj3y" path="res://Scenes/Interface/deaths_counter.tscn" id="7_u50wa"]
+[ext_resource type="PackedScene" uid="uid://eogu5mur658o" path="res://Scenes/Interface/coin_tracker.tscn" id="7_u50wa"]
 [ext_resource type="PackedScene" uid="uid://niaadi6msc1b" path="res://Scenes/controller_game/controller_game.tscn" id="8_f3jbf"]
 [ext_resource type="Script" uid="uid://bgmqyf3d0cnro" path="res://Scenes/main_scene/controller_pause.gd" id="9_cnaaq"]
-[ext_resource type="PackedScene" path="res://Scenes/pause_menu/pause_menu.tscn" id="10_pmenu"]
+[ext_resource type="PackedScene" uid="uid://dkvgewiys5inc" path="res://Scenes/pause_menu/pause_menu.tscn" id="10_pmenu"]
+[ext_resource type="Theme" uid="uid://cyt0u5jbdj074" path="res://Scenes/Themes/game_interface.tres" id="11_theme"]
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1172703894 node_paths=PackedStringArray("controller_game")]
 script = ExtResource("1_nbk1h")
@@ -29,13 +30,43 @@ bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=115630512]
 
-[node name="DeathsCounter" parent="CanvasLayer" unique_id=352180415 instance=ExtResource("7_u50wa")]
+[node name="CoinTracker" parent="CanvasLayer" unique_id=352180415 instance=ExtResource("7_u50wa")]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_pmenu")]
+[node name="LevelBanner" type="Control" parent="CanvasLayer" unique_id=977342111]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -32.0
+offset_right = 160.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/LevelBanner" unique_id=977342112]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_theme")
+text = "Nivel 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/LevelBanner" unique_id=977342113]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=431781500 instance=ExtResource("10_pmenu")]
 
 [node name="ControllerGame" parent="." unique_id=2006441971 instance=ExtResource("8_f3jbf")]
 
-[node name="ControllerPause" type="Node" parent="." unique_id=694297859 node_paths=PackedStringArray("pause_menu")]
+[node name="ControllerPause" type="Node" parent="." unique_id=694297859]
 process_mode = 3
 script = ExtResource("9_cnaaq")
-pause_menu = NodePath("CanvasLayer/PauseMenu")

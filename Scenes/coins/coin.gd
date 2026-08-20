@@ -11,7 +11,8 @@ func _ready() -> void:
 	_init_animation()
 
 func _picked(_body) -> void:
-	
+	if container_coins == null:
+		return
 	container_coins.collect_coin()
 	coin_sound.reparent(get_parent())
 	coin_sound.play()
