@@ -8,10 +8,10 @@
 shader = ExtResource("2_pavh3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jyv1"]
-size = Vector2(17, 20)
+size = Vector2(14, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttwmp"]
-size = Vector2(12, 15)
+size = Vector2(14, 17)
 
 [node name="Personaje" type="CharacterBody2D" unique_id=865569988 node_paths=PackedStringArray("animation", "area_2d")]
 collision_layer = 4
@@ -21,13 +21,13 @@ area_2d = NodePath("Area2D")
 red_character_material = SubResource("ShaderMaterial_pavh3")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1889876805]
-position = Vector2(2.5, -3.0000007)
-scale = Vector2(1.3125, 1.3749999)
+position = Vector2(1.0000001, -1.4285724)
+scale = Vector2(1.125, 1.1785713)
 sprite_frames = ExtResource("1_0kalc")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=684861760]
-position = Vector2(2.5, -2)
+position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_8jyv1")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1211765133]
@@ -35,5 +35,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1392226034]
-position = Vector2(0, 0.5)
+position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_ttwmp")
