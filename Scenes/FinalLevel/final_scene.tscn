@@ -35,14 +35,28 @@ grow_vertical = 2
 theme = ExtResource("1_theme")
 script = ExtResource("2_script")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=874670052]
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=874670052]
+layer = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1602651010]
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundLayer" unique_id=1602651010]
 position = Vector2(595, 310.00003)
 scale = Vector2(0.7841795, 0.7841797)
 texture = ExtResource("1_rmh6c")
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=9000002]
+[node name="DimOverlay" type="ColorRect" parent="BackgroundLayer" unique_id=874670053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45)
+mouse_filter = 2
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=874670054]
+layer = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="UILayer" unique_id=9000002]
 texture_filter = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,13 +64,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=9000003]
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/CenterContainer" unique_id=9000003]
 texture_filter = 2
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=9000004]
+[node name="TitleLabel" type="Label" parent="UILayer/CenterContainer/VBoxContainer" unique_id=9000004]
 texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -67,26 +81,26 @@ theme_override_font_sizes/font_size = 38
 text = "¡SEÑAL RESTAURADA!"
 horizontal_alignment = 1
 
-[node name="StatsPanel" type="PanelContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=9000005]
+[node name="StatsPanel" type="PanelContainer" parent="UILayer/CenterContainer/VBoxContainer" unique_id=9000005]
 texture_filter = 2
 custom_minimum_size = Vector2(360, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_stats")
 
-[node name="VBox" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/StatsPanel" unique_id=9000006]
+[node name="VBox" type="VBoxContainer" parent="UILayer/CenterContainer/VBoxContainer/StatsPanel" unique_id=9000006]
 texture_filter = 2
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="MuertesLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/StatsPanel/VBox" unique_id=9000008]
+[node name="MuertesLabel" type="Label" parent="UILayer/CenterContainer/VBoxContainer/StatsPanel/VBox" unique_id=9000008]
 texture_filter = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Muertes: 0"
 horizontal_alignment = 1
 
-[node name="CreditsLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=9000010]
+[node name="CreditsLabel" type="Label" parent="UILayer/CenterContainer/VBoxContainer" unique_id=9000010]
 texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.875, 0.92, 1)
@@ -94,7 +108,7 @@ theme_override_font_sizes/font_size = 27
 text = "Desarrollado por: Juan Camacho"
 horizontal_alignment = 1
 
-[node name="MenuButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=9000011]
+[node name="MenuButton" type="Button" parent="UILayer/CenterContainer/VBoxContainer" unique_id=9000011]
 texture_filter = 2
 custom_minimum_size = Vector2(220, 48)
 layout_mode = 2

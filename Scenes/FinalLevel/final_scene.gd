@@ -1,7 +1,7 @@
 extends Control
 
-@onready var _muertes_label: Label = $CanvasLayer/CenterContainer/VBoxContainer/StatsPanel/VBox/MuertesLabel
-@onready var _menu_button: Button = $CanvasLayer/CenterContainer/VBoxContainer/MenuButton
+@onready var _muertes_label: Label = $UILayer/CenterContainer/VBoxContainer/StatsPanel/VBox/MuertesLabel
+@onready var _menu_button: Button = $UILayer/CenterContainer/VBoxContainer/MenuButton
 
 
 func _ready() -> void:
