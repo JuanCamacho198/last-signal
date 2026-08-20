@@ -64,12 +64,11 @@ func _load_level():
 func _show_banner(level: int) -> void:
 	if not _banner or not _banner_label or not _banner_timer:
 		return
-	var text: String
-	if level == nivels.size() and GlobalController.coins_total == 0:
-		text = "Nivel Final"
-	else:
-		text = "Nivel %d" % level
-	_banner_label.text = text
+	# FinalScene tiene su propia pantalla - no mostrar banner allí
+	if level == nivels.size():
+		_banner.visible = false
+		return
+	_banner_label.text = "Nivel %d" % level
 	_banner.visible = true
 	_banner_timer.start(2.0)
 
