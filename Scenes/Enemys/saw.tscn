@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://uy2nchjmxssc"]
+
+[ext_resource type="Script" uid="uid://cb6itesm5m24k" path="res://Scenes/Enemys/saw.gd" id="1_7mi3m"]
+[ext_resource type="Texture2D" uid="uid://dckp6f26g4mfr" path="res://Assets/sprites/industrial_spritesheet_lv1.png" id="1_yu63o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jyv1"]
+atlas = ExtResource("1_yu63o")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ttwmp"]
+radius = 8.0
+
+[node name="Saw" type="CharacterBody2D" unique_id=1670142628]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_7mi3m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108394486]
+texture = SubResource("AtlasTexture_8jyv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1227123092]
+shape = SubResource("CircleShape2D_ttwmp")

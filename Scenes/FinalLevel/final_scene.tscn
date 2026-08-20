@@ -2,19 +2,23 @@
 
 [node name="FinalScene" type="Node2D" unique_id=1230814484]
 
-[node name="Label" type="Label" parent="." unique_id=736952087]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=839950731]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -94.0
-offset_top = -11.5
+offset_top = -50.5
 offset_right = 94.0
-offset_bottom = 11.5
+offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=736952087]
+layout_mode = 2
 text = "Felicidades! Has Ganado
 
 Desarrollado por:
 Juan Camacho"
+horizontal_alignment = 1
