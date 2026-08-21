@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cokvh2h6amrq4" path="res://Scenes/nivel_2/nivel_2.tscn" id="3_04s25"]
 [ext_resource type="PackedScene" uid="uid://dvx2hbtohb8io" path="res://Scenes/background/parallax_2d.tscn" id="3_nbk1h"]
 [ext_resource type="PackedScene" uid="uid://dgcy4lnnqrojp" path="res://Scenes/nivel_3/nivel_3.tscn" id="4_nvawf"]
+[ext_resource type="PackedScene" uid="uid://d8ww6tptqo6e" path="res://Scenes/nivel_5/nivel_5.tscn" id="5_n5"]
+[ext_resource type="PackedScene" uid="uid://buhxya0vbbgih" path="res://Scenes/nivel_4/nivel_4.tscn" id="5_xmaab"]
 [ext_resource type="AudioStream" uid="uid://jijs6u2jwl16" path="res://Addons/music/Pixel Void.wav" id="7_nvawf"]
 [ext_resource type="PackedScene" uid="uid://eogu5mur658o" path="res://Scenes/Interface/coin_tracker.tscn" id="7_u50wa"]
 [ext_resource type="PackedScene" uid="uid://niaadi6msc1b" path="res://Scenes/controller_game/controller_game.tscn" id="8_f3jbf"]
@@ -15,7 +17,7 @@
 
 [node name="EscenaPrincipal" type="Node2D" unique_id=1172703894 node_paths=PackedStringArray("controller_game")]
 script = ExtResource("1_nbk1h")
-nivels = Array[PackedScene]([ExtResource("1_nxo4g"), ExtResource("3_04s25"), ExtResource("4_nvawf"), ExtResource("2_eifew")])
+nivels = Array[PackedScene]([ExtResource("1_nxo4g"), ExtResource("3_04s25"), ExtResource("4_nvawf"), ExtResource("5_xmaab"), ExtResource("5_n5"), ExtResource("2_eifew")])
 controller_game = NodePath("ControllerGame")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2095444177]
