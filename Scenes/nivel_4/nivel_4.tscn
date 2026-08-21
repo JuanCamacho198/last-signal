@@ -1,0 +1,58 @@
+[gd_scene format=4 uid="uid://buhxya0vbbgih"]
+
+[ext_resource type="PackedScene" uid="uid://ddos7k2lwigrq" path="res://Scenes/energy/energy.tscn" id="1_ximkj"]
+[ext_resource type="PackedScene" uid="uid://p3im81ngvy73" path="res://Scenes/traps/tramp.tscn" id="2_r5nua"]
+[ext_resource type="PackedScene" uid="uid://dgdgd0t8cv6lb" path="res://Scenes/bordes/bordes.tscn" id="3_tx1cw"]
+[ext_resource type="PackedScene" uid="uid://dx4qfvw5clnh5" path="res://Scenes/personaje/personaje.tscn" id="4_r4dhy"]
+[ext_resource type="PackedScene" uid="uid://b2l1qewlv50s8" path="res://Scenes/ContainerCoins/container_coins.tscn" id="5_knmca"]
+[ext_resource type="PackedScene" uid="uid://de263i6mpe1dr" path="res://Scenes/coins/coin.tscn" id="6_lnx4p"]
+[ext_resource type="PackedScene" uid="uid://dvx2hbtohb8io" path="res://Scenes/background/parallax_2d.tscn" id="7_djf2i"]
+[ext_resource type="PackedScene" uid="uid://uy2nchjmxssc" path="res://Scenes/Enemys/saw.tscn" id="8_isnbg"]
+[ext_resource type="TileSet" uid="uid://clbjf1iiphlue" path="res://Tilesets/industrial.tres" id="9_eq8r0"]
+
+[node name="Nivel_4" type="Node2D" unique_id=930011044]
+
+[node name="Energy" parent="." unique_id=1520034141 instance=ExtResource("1_ximkj")]
+position = Vector2(72, 50)
+
+[node name="Trap" parent="." unique_id=569464287 instance=ExtResource("2_r5nua")]
+position = Vector2(137, -104)
+
+[node name="Bordes" parent="." unique_id=783653055 instance=ExtResource("3_tx1cw")]
+
+[node name="Personaje" parent="." unique_id=865569988 instance=ExtResource("4_r4dhy")]
+position = Vector2(-189, -72)
+
+[node name="ContainerCoins" parent="." unique_id=1002267955 instance=ExtResource("5_knmca")]
+
+[node name="Coin" parent="ContainerCoins" unique_id=1781540798 instance=ExtResource("6_lnx4p")]
+position = Vector2(-165, -1)
+
+[node name="Coin2" parent="ContainerCoins" unique_id=579927123 instance=ExtResource("6_lnx4p")]
+position = Vector2(176, 17)
+
+[node name="Coin3" parent="ContainerCoins" unique_id=610756995 instance=ExtResource("6_lnx4p")]
+position = Vector2(136, -48)
+
+[node name="Background_type_1" parent="." unique_id=712274906 instance=ExtResource("7_djf2i")]
+visible = false
+z_index = -2
+scroll_offset = Vector2(4, -11)
+
+[node name="Saw" parent="." unique_id=1670142628 instance=ExtResource("8_isnbg")]
+position = Vector2(74, -50)
+move_direction = Vector2(0, 50)
+
+[node name="Saw2" parent="." unique_id=1531791933 instance=ExtResource("8_isnbg")]
+position = Vector2(8, 50)
+move_direction = Vector2(50, 0)
+
+[node name="Nivel" type="TileMapLayer" parent="." unique_id=759281540]
+tile_map_data = PackedByteArray("AADz//z/AQAAAAAAAAD0//z/AQAAAAAAAAD1//z/AQAAAAAAAAD2//z/AQAAAAAAAAD3//z/AQAAAAAAAAD4//z/AQAAAAAAAAD5//z/AQAAAAAAAAD6//z/AQAAAAAAAAD7//z/AQAAAAAAAAD1//n/AgAFAAEAAAD2//n/AgAFAAEAAAD3//n/AgAFAAEAAAD4//n/AgAFAAEAAAD5//n/AgAFAAEAAAD6//n/AgAFAAEAAAD7//n/AgAFAAEAAAD///7/AQACAAAAAAAAAP7/AQACAAAAAAABAP7/AQACAAAAAAACAP7/AQACAAAAAAAGAP7/AQACAAAAAAAHAP7/AQACAAAAAAAIAP7/AQACAAAAAAAJAP7/AQACAAAAAAALAAIAAQACAAAAAAAKAAIAAQACAAAAAAAJAAIAAQACAAAAAAD9/wEAAQACAAAAAAD8/wEAAQACAAAAAAD7/wEAAQACAAAAAAD6/wEAAQACAAAAAAD1/wMAAQACAAAAAAD2/wMAAQACAAAAAAD3/wMAAQACAAAAAAD4/wMAAQACAAAAAAAMAAYAAQAAAAAAAAAGAAYAAgABAAEAAAAHAAYAAgABAAEAAAAIAAYAAgABAAEAAAAJAAYAAgABAAEAAAAKAAYAAgABAAEAAAALAAYAAgACAAEAAAD4/wYAAgAAAAEAAAD5/wYAAgABAAEAAAD6/wYAAgABAAEAAAD7/wYAAgABAAEAAAD8/wYAAgABAAEAAAD9/wYAAgABAAEAAAD+/wYAAgABAAEAAAD//wYAAgACAAEAAAD2/wYAAgADAAEAAAD0/wYAAgADAAEAAAACAAYAAgADAAEAAAAFAAYAAgAAAAEAAAABAAYAAgADAAAAAAAEAAYAAQAAAAAAAAAAAAYAAQAAAAAAAAADAAYAAgACAAAAAAD3/wYAAQAAAAAAAAD1/wYAAgACAAAAAADz/wYAAgACAAAAAAAEAAQAAQACAAAAAAA=")
+tile_set = ExtResource("9_eq8r0")
+
+[node name="Fondo" type="TileMap" parent="." unique_id=1211897377]
+z_index = -2
+tile_set = ExtResource("9_eq8r0")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131083, 131072, 3, -65547, 131072, 3, -131082, 131072, 3, -65546, 131072, 3, -10, 131072, 3, -393217, 131072, 3, -327681, 131072, 3, -458752, 131072, 3, -393216, 131072, 3, -327680, 131072, 3, -262144, 131072, 3, -458751, 131072, 3, -458742, 131072, 3, -393206, 131072, 3, -458741, 131072, 3, -393205, 131072, 3, -327669, 131072, 3, -262133, 131072, 3, -196597, 131072, 3, -458740, 0, 3, -393229, 0, 3, -393228, 0, 3, -327693, 0, 3, -131085, 0, 3, -131084, 0, 3, -65549, 0, 3, -393204, 0, 3)
