@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d8ww6tptqo6e"]
+
+[ext_resource type="PackedScene" uid="uid://ddos7k2lwigrq" path="res://Scenes/energy/energy.tscn" id="1_aojnq"]
+[ext_resource type="PackedScene" uid="uid://dgdgd0t8cv6lb" path="res://Scenes/bordes/bordes.tscn" id="2_fkh7a"]
+[ext_resource type="PackedScene" uid="uid://dx4qfvw5clnh5" path="res://Scenes/personaje/personaje.tscn" id="3_bc74h"]
+[ext_resource type="PackedScene" uid="uid://b2l1qewlv50s8" path="res://Scenes/ContainerCoins/container_coins.tscn" id="4_xl3rx"]
+[ext_resource type="PackedScene" uid="uid://de263i6mpe1dr" path="res://Scenes/coins/coin.tscn" id="5_spk72"]
+
+[node name="Nivel_5" type="Node2D" unique_id=1615920098]
+
+[node name="Energy" parent="." unique_id=1520034141 instance=ExtResource("1_aojnq")]
+position = Vector2(-32, 93)
+
+[node name="Bordes" parent="." unique_id=783653055 instance=ExtResource("2_fkh7a")]
+
+[node name="Personaje" parent="." unique_id=865569988 instance=ExtResource("3_bc74h")]
+position = Vector2(168, -81)
+
+[node name="ContainerCoins" parent="." unique_id=1002267955 instance=ExtResource("4_xl3rx")]
+
+[node name="Coin" parent="ContainerCoins" unique_id=1781540798 instance=ExtResource("5_spk72")]
+position = Vector2(-191, -90)
+
+[node name="Coin2" parent="ContainerCoins" unique_id=984243846 instance=ExtResource("5_spk72")]
+position = Vector2(190, -92)
