@@ -9,6 +9,7 @@ var _current_level_instance: Node
 @onready var _banner: Control = $CanvasLayer/LevelBanner
 @onready var _banner_label: Label = $CanvasLayer/LevelBanner/Label
 @onready var _banner_timer: Timer = $CanvasLayer/LevelBanner/Timer
+@onready var _coin_tracker: Control = $CanvasLayer/CoinTracker
 
 var _coins_connected: bool = false
 
@@ -64,10 +65,14 @@ func _load_level():
 func _show_banner(level: int) -> void:
 	if not _banner or not _banner_label or not _banner_timer:
 		return
-	# FinalScene tiene su propia pantalla - no mostrar banner allí
+	# FinalScene tiene su propia pantalla - no mostrar banner ni HUD naranja allí
 	if level == nivels.size():
 		_banner.visible = false
+		if _coin_tracker:
+			_coin_tracker.visible = false
 		return
+	if _coin_tracker:
+		_coin_tracker.visible = true
 	_banner_label.text = "Nivel %d" % level
 	_banner.visible = true
 	_banner_timer.start(2.0)
