@@ -29,6 +29,12 @@ tile_set = ExtResource("6_bc74h")
 [node name="Coin" parent="ContainerCoins" unique_id=1781540798 instance=ExtResource("5_spk72")]
 position = Vector2(177, 91)
 
+[node name="Coin2" parent="ContainerCoins" unique_id=242877453 instance=ExtResource("5_spk72")]
+position = Vector2(-40, 39)
+
+[node name="Coin3" parent="ContainerCoins" unique_id=2008728304 instance=ExtResource("5_spk72")]
+position = Vector2(-196, -14)
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=129162129]
 visible = false
 
@@ -40,6 +46,12 @@ texture = ExtResource("7_xl3rx")
 
 [node name="Trap" parent="." unique_id=569464287 instance=ExtResource("8_spk72")]
 position = Vector2(-80, -104)
+
+[node name="Trap4" parent="." unique_id=1412664740 instance=ExtResource("8_spk72")]
+position = Vector2(-13, -104)
+
+[node name="Trap5" parent="." unique_id=1456213442 instance=ExtResource("8_spk72")]
+position = Vector2(49, -104)
 
 [node name="Trap2" parent="." unique_id=992170079 instance=ExtResource("8_spk72")]
 position = Vector2(168, -39)
@@ -54,3 +66,29 @@ move_direction = Vector2(50, 0)
 [node name="Saw2" parent="." unique_id=877171114 instance=ExtResource("8_saw")]
 position = Vector2(201, -5)
 move_direction = Vector2(-50, 0)
+
+[node name="Saw3" parent="." unique_id=1513847628 instance=ExtResource("8_saw")]
+position = Vector2(109, -102)
+move_direction = Vector2(0, 40)
+
+[node name="Saw4" parent="." unique_id=1540625305 instance=ExtResource("8_saw")]
+position = Vector2(18, -39)
+move_direction = Vector2(0, 40)
+
+[node name="Saw5" parent="." unique_id=118942824 instance=ExtResource("8_saw")]
+position = Vector2(-89, -37)
+move_direction = Vector2(0, 40)
+
+[node name="Saw7" parent="." unique_id=938057296 instance=ExtResource("8_saw")]
+position = Vector2(-58, 74)
+move_direction = Vector2(0, 30)
+
+[node name="Saw8" parent="." unique_id=74805204 instance=ExtResource("8_saw")]
+position = Vector2(15, 74)
+move_direction = Vector2(0, 30)
+
+[node name="Saw6" parent="." unique_id=454918756 instance=ExtResource("8_saw")]
+position = Vector2(105, -38)
+move_direction = Vector2(0, 40)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2041457718]

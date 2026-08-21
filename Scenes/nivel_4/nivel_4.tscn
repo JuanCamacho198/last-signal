@@ -35,7 +35,6 @@ position = Vector2(176, 17)
 position = Vector2(136, -48)
 
 [node name="Background_type_1" parent="." unique_id=712274906 instance=ExtResource("7_djf2i")]
-visible = false
 z_index = -2
 scroll_offset = Vector2(4, -11)
 
